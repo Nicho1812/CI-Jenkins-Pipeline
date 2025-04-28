@@ -5,7 +5,7 @@ pipeline {
             steps { echo 'Building with Maven' }
         }
         stage('Unit Tests') {
-            steps { echo 'Running JUnit tests' }
+            steps { echo 'Running tests' }
         }
         stage('Integration Tests') {
             steps { echo 'Running TestNG tests' }
