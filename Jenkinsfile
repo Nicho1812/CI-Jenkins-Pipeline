@@ -11,7 +11,7 @@ pipeline {
             steps { echo 'Running JUnit, Mocha, Jest tests' }
         }
         stage('Code Analysis') {
-            steps { echo 'Scanning with SonarQube, ESLint' }
+            steps { echo 'Scanning with SonarQube and ESLint' }
         }
         stage('Security Scan') {
             steps { echo 'Running npm audit, OWASP Dependency-Check, Snyk' }
