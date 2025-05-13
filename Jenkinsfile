@@ -4,20 +4,23 @@ pipeline {
         stage('Build') {
             steps { echo 'Building with Maven' }
         }
-        stage('Unit Tests') {
+        stage('Unit and Integration Tests') {
             steps { echo 'Running tests' }
         }
         stage('Integration Tests') {
-            steps { echo 'Running TestNG tests' }
+            steps { echo 'Running JUnit, Mocha, Jest tests' }
         }
         stage('Code Analysis') {
-            steps { echo 'Scanning with SonarQube' }
+            steps { echo 'Scanning with SonarQube and  ESLint' }
         }
         stage('Security Scan') {
-            steps { echo 'Running OWASP Dependency-Check' }
+            steps { echo 'Running npm audit, OWASP Dependency-Check, Snyk' }
         }
         stage('Deploy to Staging') {
-            steps { echo 'Deploying to AWS EC2 staging' }
+            steps { echo 'Deploying to Docker, AWS EC2 staging' }
+        }
+        stage('Integration Tests on Staging') {
+            steps { echo 'Run Postman, Selenium on deployed app' }
         }
         stage('Deploy to Production') {
             steps { echo 'Deploying to AWS EC2 production' }
