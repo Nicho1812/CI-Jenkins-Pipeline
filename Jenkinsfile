@@ -17,7 +17,7 @@ pipeline {
             steps { echo 'Running npm audit, OWASP Dependency-Check, Snyk' }
         }
         stage('Deploy to Staging') {
-            steps { echo 'Deploying to Docker, AWS EC2 staging' }
+            steps { echo 'Deploying to Docker and AWS EC2 staging' }
         }
         stage('Integration Tests on Staging') {
             steps { echo 'Run Postman, Selenium on deployed app' }
